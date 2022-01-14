@@ -1,0 +1,15 @@
+{
+  "name": "mc-tech-support",
+  "version": "1.0.0",
+  "description": "Discord bot to  provide tech support for my mc server",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js --experimental-json-modules"
+  },
+  "author": "Pieterv24",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}
