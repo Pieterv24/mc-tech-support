@@ -13,10 +13,13 @@ export const data = new SlashCommandBuilder()
  * @param {CommandInteraction} interaction 
  */
 export const excecute = async (interaction) => {
-    const velocity = execSync(velocity_query);
-    console.log(velocity.toString());
+    try {
+	const velocity = execSync(velocity_query);
 
-    const velocity_running = velocity.toString().includes('velocity: 1 windows');
+	const velocity_running = velocity.toString().includes('velocity: 1 windows');
 
-    interaction.reply(`Velocity is ${velocity_running ? 'running' : 'not running'}`);
+    	await interaction.reply(`Velocity is ${velocity_running ? 'running' : 'not running'}`);
+    } catch (error) {
+	await interaction.reply("Velocity is not running");
+    }
 }

@@ -1,0 +1,7 @@
+[0;1;31mWarning:[0m The unit file, source configuration file or drop-ins of mc-tech-support.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+[0;1;31m×[0m mc-tech-support.service - MC Tech support bot
+     Loaded: loaded (/etc/systemd/system/mc-tech-support.service; enabled; vendor preset: enabled)
+     Active: [0;1;31mfailed[0m (Result: exit-code) since Fri 2022-01-14 21:13:41 UTC; 2min 18s ago
+    Process: 9081 ExecStart=/home/pieter/.nvm/versions/node/v17.3.1/bin/node --experimental-json-modules /home/pieter/mc-tech-support/index.js [0;1;31m(code=exited, status=1/FAILURE)[0m
+   Main PID: 9081 (code=exited, status=1/FAILURE)
+        CPU: 439ms

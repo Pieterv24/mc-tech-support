@@ -25,20 +25,35 @@ export const excecute = async (interaction) => {
     switch(server) {
         case 'velocity-server':
             await interaction.reply('Starting velocity server');
-            const status = execSync(velocity_query);
-            const velocity_running = status.toString().includes('velocity: 1 windows');
+	    try {
+                const status = execSync(velocity_query);
 
-            if (!velocity_running) {
-                const start = execSync(velocity_start);
-                interaction.editReply()
-                await interaction.editReply("Velocity server has started");
-            } else {
-                await interaction.editReply("Velocity server is already running");
-            }
+		const velocity_running = status.toString().includes('velocity: 1 windows');
+
+	        if (!velocity_running) {
+                    try {
+                        const start = execSync(velocity_start);
+                        await interaction.editReply("Velocity server has started");
+                    } catch (error) {
+                        await interaction.editReply("Velocity server failed to start");
+                    }
+                } else {
+                    await interaction.editReply("Velocity server is already running");
+                }
+ 	    } catch (error) {
+		try {
+                    const start = execSync(velocity_start);
+                    await interaction.editReply("Velocity server has started");
+                } catch (error) {
+                    await interaction.editReply("Velocity server failed to start");
+                }
+	    }
             break;
         case 'minecraft-server':
-            interaction.reply('This command is not yet supported');
+            await interaction.reply('This command is not yet supported');
+	    break;
         default:
-            interaction.reply('Unknown server');
+            await interaction.reply('Unknown server');
+	    break;
     }
 }
