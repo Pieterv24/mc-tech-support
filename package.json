@@ -5,11 +5,15 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js --experimental-json-modules"
+    "start": "node --experimental-json-modules index.js",
+    "deploy-commands": "node --experimental-json-modules deploy-commands.js"
   },
   "author": "Pieterv24",
   "license": "MIT",
   "dependencies": {
+    "@discordjs/builders": "^0.11.0",
+    "@discordjs/rest": "^0.2.0-canary.0",
+    "discord-api-types": "^0.26.1",
     "discord.js": "^13.6.0"
   }
 }

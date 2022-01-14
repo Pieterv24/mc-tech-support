@@ -1,4 +1,5 @@
 {
     "token": "PlaceHolder",
+    "clientId": "Your--Application-Client-ID-Here",
     "restart_command": "velocity-start"
 }
